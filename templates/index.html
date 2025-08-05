@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>간단한 사진 되다!</title>
+        <style>
+            h1{color:crimson}
+            h2{color:blue; text-decoration:underline}
+            h3{color:blueviolet}
+        </style>
+    </head>
+    <body>
+        <h1>간단한 사진 되다!</h1>
+        <h2>나는 사진을 게시하다!</h2>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <label for="n_colors">선명도(ex: 2-10):</label>
+            <input type="number" name="n_colors" min="2" max="10" value="5" required>
+            <button type="submit">외계인의 대단한 기술</button>
+        </form>
+
+        {%if result_path%}
+        <h3>사진 처리된!:</h3>
+        <img src="{{result_path}}" alt="결과 사진" style="max-width: 100%; height:auto;" >
+        {%endif%}
+    </body>
+</html>
